@@ -11,4 +11,16 @@ const createJob = async (req, res) => {
     res.status(201).json(createJob)
   }
 };
-export default createJob
+
+const getAllJob = async(req,res)=>{
+  try {
+    const all = await Job.find({})
+    if(all){
+      return res.status(200).json(all)
+    }
+    
+  } catch (error) {
+    res.status(500).json(error)
+  }
+}
+export { createJob, getAllJob };
