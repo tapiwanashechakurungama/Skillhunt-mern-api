@@ -23,6 +23,7 @@ app.get("/",async(req,res)=>{
   })
 })
 
+//live api link = https://api-mern-kuto.onrender.com/
 
 app.listen(process.env.PORT || 8080,()=>{
   connectDb()

@@ -1,8 +1,8 @@
 import Job from "./../models/jobModels.js";
 
 const createJob = async (req, res) => {
-  const { title, description, qualifications,maxApplications,applicationsCount} = req.body
-  if(!title || !description ||! qualifications ||!maxApplications){
+  const { title,company, description, qualifications,maxApplications,applicationsCount} = req.body
+  if(!title || !company || !description ||! qualifications ||!maxApplications){
     return res.status(400).json("All fields are required")
   }
 
@@ -23,4 +23,16 @@ const getAllJob = async(req,res)=>{
     res.status(500).json(error)
   }
 }
-export { createJob, getAllJob };
+const getAspecificJob = async(req,res)=>{
+  try {
+    const {id } = req.params
+    const job = await Job.findById(id)
+    if(job){
+      return res.status(200).json(job)
+    }
+    
+  } catch (error) {
+    res.status(500).json(error)
+  }
+}
+export { createJob, getAllJob, getAspecificJob };
