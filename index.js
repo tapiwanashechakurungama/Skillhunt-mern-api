@@ -10,8 +10,12 @@ dotenv.config()
 
 
 const app = express()
+const corsOption = {
+  origin:"https://api-mern-kuto.onrender.com/" || "http://localhost:8080",
+  credentials:true
+}
 
-app.use(cors())
+app.use(cors(corsOption));
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
 
