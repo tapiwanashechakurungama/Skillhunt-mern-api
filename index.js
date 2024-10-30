@@ -17,7 +17,11 @@ app.use(express.urlencoded({extended:false}))
 
 app.use("/users", users)
 app.use("/jobs", jobs)
-
+app.get("/",async(req,res)=>{
+  res.json({
+    alljobs:"jobs/all"
+  })
+})
 
 
 app.listen(process.env.PORT || 8080,()=>{
