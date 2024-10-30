@@ -53,7 +53,21 @@ const login = async (req, res) => {
 };
 
 
+const getUser = async(req,res)=>{
+  try {
+    
+    const { id } = req.params
+    const findUser = await UserModel.findById(id)
+    if(findUser){
+      return res.status(200).json(findUser)
+    }
+
+  } catch (error) {
+    res.status(500).json(error)
+  }
+}
 
 
 
-export { register, login}
+
+export { register, login, getUser };

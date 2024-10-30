@@ -23,6 +23,7 @@ const getAllJob = async(req,res)=>{
     res.status(500).json(error)
   }
 }
+
 const getAspecificJob = async(req,res)=>{
   try {
     const {id } = req.params
