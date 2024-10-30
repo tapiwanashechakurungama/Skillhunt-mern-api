@@ -23,7 +23,8 @@ app.use("/users", users)
 app.use("/jobs", jobs)
 app.get("/",async(req,res)=>{
   res.json({
-    alljobs:"jobs/all"
+    alljobs:"jobs/all",
+    message:"this api is for job posting website"
   })
 })
 
