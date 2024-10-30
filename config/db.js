@@ -5,7 +5,10 @@ import mongoose from "mongoose"
 const connectDb = async()=>{
   try {
 
-    await mongoose.connect(process.env.MONGO_URI);
+    await mongoose.connect(
+      process.env.MONGO_URI ||
+        "mongodb+srv://chakurungamatapiwanashe:<db_password>@cluster0.gkrho.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+    );
     console.log("connected to mongodb")
     
   } catch (error) {
