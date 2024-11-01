@@ -22,16 +22,10 @@ app.use(express.urlencoded({extended:false}))
 
 app.use("/users", users)
 app.use("/jobs", jobs)
-app.use("/application", application);
 app.get("/",async(req,res)=>{
   res.json({
     alljobs:"jobs/all",
-    application:[
-      {
-        apply:"/application/apply",
-        all:"/application/all",
-      }
-    ]
+   createjob:"jobs/create"
   })
 })
 
