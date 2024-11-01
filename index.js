@@ -4,6 +4,7 @@ import connectDb from "./config/db.js"
 import dotenv from "dotenv"
 import users from "./routes/userRoutes.js"
 import jobs from "./routes/jobRoutes.js"
+import application from "./routes/applicationRoutes.js"
 
 
 dotenv.config()
@@ -21,10 +22,16 @@ app.use(express.urlencoded({extended:false}))
 
 app.use("/users", users)
 app.use("/jobs", jobs)
+app.use("/application", application);
 app.get("/",async(req,res)=>{
   res.json({
     alljobs:"jobs/all",
-    message:"this api is for job posting website"
+    application:[
+      {
+        apply:"/application/apply",
+        all:"/application/all",
+      }
+    ]
   })
 })
 
