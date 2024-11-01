@@ -4,7 +4,7 @@ import connectDb from "./config/db.js"
 import dotenv from "dotenv"
 import users from "./routes/userRoutes.js"
 import jobs from "./routes/jobRoutes.js"
-import application from "./routes/applicationRoutes.js"
+
 
 
 dotenv.config()
