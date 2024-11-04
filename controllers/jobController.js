@@ -6,6 +6,11 @@ const createJob = async (req, res) => {
     return res.status(400).json("All fields are required")
   }
 
+  const jobExist = await Job.findOne({title, company})
+  if(jobExist){
+    return res.status(400).json("You have already posted this job ")
+  }
+
   const createJob = await Job.create({ ...req.body});
   if (createJob) {
     res.status(201).json(createJob)
