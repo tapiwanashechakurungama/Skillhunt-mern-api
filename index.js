@@ -29,7 +29,8 @@ app.get("/",async(req,res)=>{
   })
 })
 
-//live api link = https://api-mern-kuto.onrender.com/
+//live api link for backend = https://api-mern-kuto.onrender.com/
+//live api link for frontend = https://skillhunt-mern-client.vercel.app/
 
 app.listen(process.env.PORT || 8080,()=>{
   connectDb()
