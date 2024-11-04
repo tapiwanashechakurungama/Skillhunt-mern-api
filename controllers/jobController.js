@@ -2,7 +2,7 @@ import Job from "./../models/jobModels.js";
 
 const createJob = async (req, res) => {
   const { title,company, description, qualifications,maxApplications,applicationsCount} = req.body
-  if(!title || !company || !description ||! qualifications ||!maxApplications){
+  if(!title || !company || !description  ||!maxApplications){
     return res.status(400).json("All fields are required")
   }
 
