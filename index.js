@@ -10,6 +10,8 @@ import jobs from "./routes/jobRoutes.js"
 dotenv.config()
 
 
+
+
 const app = express()
 const corsOption = {
   origin:"https://api-mern-kuto.onrender.com/" || "http://localhost:8080",
@@ -25,7 +27,8 @@ app.use("/jobs", jobs)
 app.get("/",async(req,res)=>{
   res.json({
     alljobs:"jobs/all",
-   createjob:"jobs/create"
+    createjob:"jobs/create",
+    emojis:"✔✔🐱‍🚀🐱‍👓🐱‍🐉"
   })
 })
 
